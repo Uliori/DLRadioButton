@@ -82,7 +82,12 @@ static BOOL _groupModifing = NO;
     } else {
         iconPath = [UIBezierPath bezierPathWithOvalInRect:iconRect];
     }
-    [iconColor setStroke];
+    if (selected) {
+        [indicatorColor setStroke];
+    }
+    else {
+        [iconColor setStroke];
+    }
     iconPath.lineWidth = iconStrokeWidth;
     [iconPath stroke];
     CGContextAddPath(context, iconPath.CGPath);
